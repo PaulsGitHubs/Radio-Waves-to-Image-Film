@@ -15,8 +15,8 @@ Keep in mind running 3D visualizations are very computationally intensive, and I
 
 # GNU Radio Companion Setup for IQ.bin files
 
-RTL source -> Stream to Vector -> FFT Filter -> File Sink (for the output of the IQ binary file)
-RTL source -> QT GUI Frequency Sink (to visualize what is happening)
+- RTL source -> Stream to Vector -> FFT Filter -> File Sink (for the output of the IQ binary file)
+- RTL source -> QT GUI Frequency Sink (to visualize what is happening)
 ![Screenshot from 2023-05-25 13-18-37](https://github.com/PaulsGitHubs/Radio-Waves-to-Image-Film/assets/102178068/356fa74d-42a9-409b-9b6f-10251b33c5d6)
 
 
