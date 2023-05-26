@@ -35,6 +35,10 @@ Note: 3D visualizations are very computationally intensive. These scripts are no
 
 ![Screenshot from 2023-05-25 13-07-28](https://github.com/PaulsGitHubs/Radio-Waves-to-Image-Film/assets/102178068/cdb96dab-ed72-470e-babd-293d88acc63b)
 
+- 2d visualization (anything under PSD limit is set to grey...)
+![github](https://github.com/PaulsGitHubs/Radio-Waves-to-Image-Film/assets/102178068/d9bad222-b6e4-42fb-9976-4ca4116630e2)
+
+
 # GNU Radio Companion Usage
 
 The project utilizes GNU Radio Companion (GRC) for handling IQ.bin files. Here's the setup:
