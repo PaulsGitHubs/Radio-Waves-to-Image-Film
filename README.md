@@ -76,7 +76,7 @@ pip install -r requirements.txt
 ```
 3. Download the necessary binary files or create your own.
 
-#Usage
+# Usage
 
 This project outputs every frame in a sequence, according to the chunk size specified in the 2D Cartesian grid scripts. By default, the chunk size is set to half of the input max. The chunk time can be computed as chunk_time = chunk_size / input_max.
 
