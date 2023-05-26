@@ -32,12 +32,6 @@ Note: 3D visualizations are very computationally intensive. These scripts are no
 
 Keep in mind running 3D visualizations are very computationally intensive, and I would suggest sticking to the 2D cartesian scripts... even if you have a supercomputer, these are not optamized for GPU acceleration... so just stick with the 2D visualizations for now... trust me.
 
-# GNU Radio Companion Setup for IQ.bin files
-
-- RTL source -> Stream to Vector -> FFT Filter -> File Sink (for the output of the IQ binary file)
-- RTL source -> QT GUI Frequency Sink (to visualize what is happening)
-![Screenshot from 2023-05-25 13-18-37](https://github.com/PaulsGitHubs/Radio-Waves-to-Image-Film/assets/102178068/356fa74d-42a9-409b-9b6f-10251b33c5d6)
-
 
 # Compression
 For data compression, please refer to our sister project - IQ Sample Compression with FFT and DWT. This project will help you compress the data with DWT, and then decompress it to FFT, IQ samples, etc.
@@ -84,9 +78,9 @@ Note: 3D visualizations are very computationally intensive. These scripts are no
 GNU Radio Companion Setup
 
 The project utilizes GNU Radio Companion (GRC) for handling IQ.bin files. Here's the setup:
-
-    RTL source -> Stream to Vector -> FFT Filter -> File Sink (for output of the IQ binary file)
-    RTL source -> QT GUI Frequency Sink (to visualize what is happening)
+- RTL source -> Stream to Vector -> FFT Filter -> File Sink (for the output of the IQ binary file)
+- RTL source -> QT GUI Frequency Sink (to visualize what is happening)
+![Screenshot from 2023-05-25 13-18-37](https://github.com/PaulsGitHubs/Radio-Waves-to-Image-Film/assets/102178068/356fa74d-42a9-409b-9b6f-10251b33c5d6)
 
 # Data Compression
 
