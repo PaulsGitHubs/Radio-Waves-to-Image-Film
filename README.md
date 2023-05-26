@@ -59,10 +59,9 @@ The repository contains several Python scripts that handle various aspects of th
 - Script to sort and concatenate .bin files into a single file
 - Script to convert images back to .bin files
 
-#Contributing
+# Contributing
 
 Contributions, issues and feature requests are welcome! Feel free to check the issues page.
-License
 
 # Liscence
 This project is licensed under the ____ - see the LICENSE.md file for details.
