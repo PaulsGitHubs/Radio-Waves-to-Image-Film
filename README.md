@@ -1,6 +1,7 @@
 # Radio-Waves-to-Image-Film
 This repository contains scripts for converting radio waves into images (frames) and subsequently to film. This transformation is accomplished using a variety of algorithms for image and frame construction.
-
+1. You can transform IQ radio samples to images /2D_Cartesian_plan scripts or using PyQt interface.
+2. You can convert images to IQ radio samples /PNG_to_IQ or using PyQt interface.
 ## Getting Started
 
 Follow these steps to get a copy of the project up and running on your local machine.
@@ -46,10 +47,6 @@ The project utilizes GNU Radio Companion (GRC) for handling IQ.bin files. Here's
 - RTL source -> Stream to Vector -> FFT Filter -> File Sink (for the output of the IQ binary file)
 - RTL source -> QT GUI Frequency Sink (to visualize what is happening)
 ![Screenshot from 2023-05-25 13-18-37](https://github.com/PaulsGitHubs/Radio-Waves-to-Image-Film/assets/102178068/356fa74d-42a9-409b-9b6f-10251b33c5d6)
-
-# Data Compression
-
-For data compression, please refer to our sister project - IQ Sample Compression with FFT and DWT. This project will help you compress the data with DWT, and then decompress it to FFT, IQ samples, etc.
 
 # Scripts Included
 
