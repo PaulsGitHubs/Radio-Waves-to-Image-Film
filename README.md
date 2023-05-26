@@ -67,6 +67,6 @@ License
 # Liscence
 This project is licensed under the ____ - see the LICENSE.md file for details.
 
-#Note
+# Note
 Please adjust the links and paths according to your actual repository structure and URLs.
 
