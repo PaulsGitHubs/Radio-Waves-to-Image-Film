@@ -3,7 +3,8 @@ This repo allows people to transform radiowaves from channels they pick to image
 
 # Requirements
 Clone repo
-Download the binary files or take some on your own...
+pip install -r requirements.txt
+Download the binary files () or take some on your own... 
 
 # Visualization
 
