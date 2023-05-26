@@ -29,7 +29,7 @@ def main():
     chunk_size = int(input_max * 0.5)  # This should give chunks of 0.2 seconds each, adjust as needed
 
     # Prepare the pictures directory
-    os.makedirs('frames', exist_ok=True)
+    os.makedirs('frames_Mag_Norm', exist_ok=True)
 
     for i in range(len(iq_data)//chunk_size):
         # Select the current chunk
@@ -66,7 +66,7 @@ def main():
         plt.axis('off')
 
         # Save the image
-        plt.savefig(f'frames_Magnitude_Norm/frame_{i:04d}.png', bbox_inches='tight', pad_inches=0)
+        plt.savefig(f'frames_Mag_Norm/frame_{i:04d}.png', bbox_inches='tight', pad_inches=0)
         plt.clf()  # Clear the current figure's content
 
 if __name__ == "__main__":

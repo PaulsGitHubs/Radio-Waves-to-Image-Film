@@ -3,7 +3,7 @@ import numpy as np
 from scipy.fft import fft
 import matplotlib.pyplot as plt
 import matplotlib.colors
-
+import skimage.color as color
 # Visible light frequency range in THz (terahertz)
 visible_light_min = 430  # THz
 visible_light_max = 790  # THz
@@ -28,7 +28,7 @@ def main():
     chunk_size = int(input_max * 0.5) 
 
     # Prepare the pictures directory
-    os.makedirs('frames_LOG_PSD', exist_ok=True)
+    os.makedirs('frames_static_LOG_PSD', exist_ok=True)
 
     for i in range(len(iq_data)//chunk_size):
         # Select the current chunk
@@ -47,32 +47,42 @@ def main():
         # Compute the power spectral density (PSD) and normalize it for brightness adjustment
         psd = np.abs(fft_data) ** 2
 
+        # Compute the phase and normalize it
+        phase = np.angle(fft_data) / (2 * np.pi)  # Normalize phase to 0-1 range
+
         # Apply a logarithmic scale to the PSD to compress the dynamic range, 
         # then normalize it for brightness adjustment. Adding a small constant 
         # to avoid taking the logarithm of zero.
         log_psd = np.log(psd + 1e-6)
         normalized_psd = (log_psd - np.min(log_psd)) / (np.max(log_psd) - np.min(log_psd))
 
-        # Combine frequency and PSD information
-        image_data = np.zeros((len(normalized_frequencies), 3))
+        # Combine frequency, PSD, and phase information
+        image_data = np.zeros((len(normalized_frequencies), 4))
         image_data[:, 0] = normalized_frequencies  # Color (hue)
         image_data[:, 1] = 1.0  # Saturation
         image_data[:, 2] = normalized_psd  # Brightness
+        image_data[:, 3] = phase  # Phase
 
         # Reshaping the frequency array into 2D format
         size = int(np.sqrt(normalized_frequencies.shape[0]))
-        image_data = image_data[:size**2, :].reshape((size, size, 3))
+        image_data = image_data[:size**2, :].reshape((size, size, 4))
 
         # Convert HSV to RGB
-        image_data = matplotlib.colors.hsv_to_rgb(image_data)
+        rgb_image_data = matplotlib.colors.hsv_to_rgb(image_data[:, :, :3])
+
+        # Create an RGBA image
+        rgba_image_data = np.zeros((size, size, 4))
+        rgba_image_data[:, :, :3] = rgb_image_data
+        rgba_image_data[:, :, 3] = image_data[:, :, 3]  # Phase
 
         # Create the image
-        plt.imshow(image_data)
+        plt.imshow(rgba_image_data)
         plt.axis('off')
 
         # Save the image
-        plt.savefig(f'frames_LOG_PSD/frame_{i:04d}.png', bbox_inches='tight', pad_inches=0)
+        plt.savefig(f'RGBA_Freq_LOG_PSD/frame_{i:04d}.png', bbox_inches='tight', pad_inches=0)
         plt.clf()  # Clear the current figure's content
 
 if __name__ == "__main__":
     main()
+
