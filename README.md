@@ -67,14 +67,14 @@ Follow these steps to get a copy of the project up and running on your local mac
 
 ```bash
 git clone https://github.com/PaulsGitHubs/Radio-Waves-to-Image-Film.git
-
+```
     Navigate to the downloaded folder and install the necessary Python packages:
 
-bash
+```bash
 
 cd Radio-Waves-to-Image-Film
 pip install -r requirements.txt
-
+```
     Download the necessary binary files or create your own.
 
 Usage
