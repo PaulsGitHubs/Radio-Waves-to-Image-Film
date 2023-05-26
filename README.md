@@ -35,11 +35,6 @@ Note: 3D visualizations are very computationally intensive. These scripts are no
 
 ![Screenshot from 2023-05-25 13-07-28](https://github.com/PaulsGitHubs/Radio-Waves-to-Image-Film/assets/102178068/cdb96dab-ed72-470e-babd-293d88acc63b)
 
-
-
-# Compression
-For data compression, please refer to our sister project - IQ Sample Compression with FFT and DWT. This project will help you compress the data with DWT, and then decompress it to FFT, IQ samples, etc.
-
 # GNU Radio Companion Usage
 
 The project utilizes GNU Radio Companion (GRC) for handling IQ.bin files. Here's the setup:
@@ -51,7 +46,7 @@ The project utilizes GNU Radio Companion (GRC) for handling IQ.bin files. Here's
 
 For data compression, please refer to our sister project - IQ Sample Compression with FFT and DWT. This project will help you compress the data with DWT, and then decompress it to FFT, IQ samples, etc.
 
-#Scripts Included
+# Scripts Included
 
 The repository contains several Python scripts that handle various aspects of the transformation process. These scripts include:
 - Script to convert radio frequencies into visible light frequencies
