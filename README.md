@@ -19,7 +19,6 @@ git clone https://github.com/PaulsGitHubs/Radio-Waves-to-Image-Film.git
 2. Navigate to the downloaded folder and install the necessary Python packages:
 
 ```bash
-
 cd Radio-Waves-to-Image-Film
 pip install -r requirements.txt
 ```
@@ -68,16 +67,16 @@ Follow these steps to get a copy of the project up and running on your local mac
 ```bash
 git clone https://github.com/PaulsGitHubs/Radio-Waves-to-Image-Film.git
 ```
-    Navigate to the downloaded folder and install the necessary Python packages:
+2. Navigate to the downloaded folder and install the necessary Python packages:
 
 ```bash
 
 cd Radio-Waves-to-Image-Film
 pip install -r requirements.txt
 ```
-    Download the necessary binary files or create your own.
+3. Download the necessary binary files or create your own.
 
-Usage
+#Usage
 
 This project outputs every frame in a sequence, according to the chunk size specified in the 2D Cartesian grid scripts. By default, the chunk size is set to half of the input max. The chunk time can be computed as chunk_time = chunk_size / input_max.
 
