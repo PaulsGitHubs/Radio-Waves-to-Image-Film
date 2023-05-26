@@ -3,7 +3,7 @@ import numpy as np
 from scipy.fft import fft
 import matplotlib.pyplot as plt
 import matplotlib.colors
-
+import skimage.color as color
 # Visible light frequency range in THz (terahertz)
 visible_light_min = 430  # THz
 visible_light_max = 790  # THz
@@ -28,7 +28,7 @@ def main():
     chunk_size = int(input_max * 0.5) 
 
     # Prepare the pictures directory
-    os.makedirs('frames_LOG_PSD', exist_ok=True)
+    os.makedirs('frames_static_LOG_PSD', exist_ok=True)
 
     for i in range(len(iq_data)//chunk_size):
         # Select the current chunk
@@ -64,14 +64,24 @@ def main():
         image_data = image_data[:size**2, :].reshape((size, size, 3))
 
         # Convert HSV to RGB
-        image_data = matplotlib.colors.hsv_to_rgb(image_data)
+        rgb_image_data = matplotlib.colors.hsv_to_rgb(image_data)
+
+        # Convert to grayscale and then back to RGB for static
+        gray_image_data = color.rgb2gray(rgb_image_data)
+        static_rgb_image_data = np.dstack([gray_image_data]*3)
+
+        # Reshape normalized_psd to match image_data dimensions
+        normalized_psd = normalized_psd[:size**2].reshape((size, size))
+
+        # Replace RGB image data with static data for low PSD values
+        rgb_image_data[normalized_psd < 0.6] = static_rgb_image_data[normalized_psd < 0.6]
 
         # Create the image
-        plt.imshow(image_data)
+        plt.imshow(rgb_image_data)
         plt.axis('off')
 
         # Save the image
-        plt.savefig(f'frames_LOG_PSD/frame_{i:04d}.png', bbox_inches='tight', pad_inches=0)
+        plt.savefig(f'frames_static_LOG_PSD/frame_{i:04d}.png', bbox_inches='tight', pad_inches=0)
         plt.clf()  # Clear the current figure's content
 
 if __name__ == "__main__":
