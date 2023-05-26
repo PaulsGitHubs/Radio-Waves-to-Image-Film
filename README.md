@@ -30,7 +30,6 @@ Note: 3D visualizations are very computationally intensive. These scripts are no
 
 ![Screenshot from 2023-05-25 13-07-28](https://github.com/PaulsGitHubs/Radio-Waves-to-Image-Film/assets/102178068/cdb96dab-ed72-470e-babd-293d88acc63b)
 
-Keep in mind running 3D visualizations are very computationally intensive, and I would suggest sticking to the 2D cartesian scripts... even if you have a supercomputer, these are not optamized for GPU acceleration... so just stick with the 2D visualizations for now... trust me.
 
 
 # Compression
@@ -70,12 +69,7 @@ pip install -r requirements.txt
 ```
 3. Download the necessary binary files or create your own.
 
-# Usage
-
-This project outputs every frame in a sequence, according to the chunk size specified in the 2D Cartesian grid scripts. By default, the chunk size is set to half of the input max. The chunk time can be computed as chunk_time = chunk_size / input_max.
-
-Note: 3D visualizations are very computationally intensive. These scripts are not optimized for GPU acceleration, so it is advisable to stick with the 2D Cartesian scripts for better performance.
-GNU Radio Companion Setup
+# GNU Radio Companion Usage
 
 The project utilizes GNU Radio Companion (GRC) for handling IQ.bin files. Here's the setup:
 - RTL source -> Stream to Vector -> FFT Filter -> File Sink (for the output of the IQ binary file)
