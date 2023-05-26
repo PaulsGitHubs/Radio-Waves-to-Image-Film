@@ -1,10 +1,22 @@
 # Radio-Waves-to-Image-Film
-This repo allows people to transform radiowaves from channels they pick to images (frames) then film based on a some algorithms for image/frame construction
+This repository contains scripts for converting radio waves into images (frames) and subsequently to film. This transformation is accomplished using a variety of algorithms for image and frame construction.
+
+## Getting Started
+
+Follow these steps to get a copy of the project up and running on your local machine.
 
 # Requirements
 Clone repo
 pip install -r requirements.txt
 Download the binary files () or take some on your own... 
+
+# Installation
+1. Clone the repository:
+
+```bash
+git clone https://github.com/PaulsGitHubs/Radio-Waves-to-Image-Film.git
+```
+
 
 # Visualization
 
